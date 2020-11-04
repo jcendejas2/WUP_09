@@ -74,7 +74,7 @@ summary(fishiesS)
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
-Perchmodel=lm(Weight~Length2 + Width, data = fishiesP)
+Perchmodel=lm(Weight~Height + Width, data = fishiesP)
 summary(Perchmodel)
 ```
 
@@ -95,7 +95,7 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 ```
 
 ```{r}
-Breammodel=lm(Weight~Length2 + Width, data = fishiesB)
+Breammodel=lm(Weight~Length2 + Height, data = fishiesB)
 summary(Breammodel)
 ```
 
