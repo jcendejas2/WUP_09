@@ -147,3 +147,8 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhaps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+We used 3 models to predict the weight.  
+For the Perch the best explanatory variables turned out to be height and width.  
+For the Bream the best explanatory variables turned out to be Length2 and height.  
+For the Smelt the best explanatory variables turned out to be Length2 and width.  
