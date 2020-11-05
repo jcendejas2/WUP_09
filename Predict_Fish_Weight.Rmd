@@ -47,17 +47,23 @@ fishiesP = select(fishiesP, -Species)
 pairs(fishiesP)
 ```
 
+This chart predicts the weight of Perch fish based on 5 predictor variables.  
+
 ```{r}
 fishiesB=filter(Fishdata, Species == "Bream")
 fishiesB = select(fishiesB, -Species)
 pairs(fishiesB)
 ```
 
+This chart predicts the weight of Bream fish based on 5 predictor variables.  
+
 ```{r}
 fishiesS=filter(Fishdata, Species == "Smelt")
 fishiesS = select(fishiesS, -Species)
 pairs(fishiesS)
 ```
+
+This chart predicts the weight of Smelt fish based on 5 predictor variables.  
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
@@ -70,6 +76,7 @@ summary(fishiesB)
 summary(fishiesS)
 ```
 
+This chart shows the numerical summary for all 3 species, Perch, Bream and Smelt. These numerical results predict the weight using 5 predictor variables.  
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
@@ -77,6 +84,8 @@ summary(fishiesS)
 Perchmodel=lm(Weight~Height + Width, data = fishiesP)
 summary(Perchmodel)
 ```
+
+This chart is a linear model that predicts the weight of Perch fish using 2 predictor variables. It also shows that the adjusted r-squared is 0.94.  
 
 ```{r}
 library(leaps)
@@ -94,10 +103,14 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
 
+This chart displays that the 2 best explanatory variables that are close to the adjusted r-squared are height and width.  
+
 ```{r}
 Breammodel=lm(Weight~Length2 + Height, data = fishiesB)
 summary(Breammodel)
 ```
+
+This chart is a linear model that predicts the weight of Bream fish using 2 predictor variables. It also shows that the adjusted r-squared is 0.94.    
 
 ```{r}
 library(leaps)
@@ -115,10 +128,14 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
 
+This chart displays that the 2 best explanatory variables that are close to the adjusted r-squared are Length2 and height.   
+
 ```{r}
 Smeltmodel=lm(Weight~Length2 + Width, data = fishiesS)
 summary(Smeltmodel)
 ```
+
+This chart is a linear model that predicts the weight of Smelt fish using 2 predictor variables. It also shows that the adjusted r-squared is 0.96.  
 
 ```{r}
 library(leaps)
@@ -136,7 +153,7 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
 
-
+This chart displays that the 2 best explanatory variables that are close to the adjusted r-squared are Length2 and width.  
 
 ## Inferential Results
 
